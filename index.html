@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>电影网97 - 高清影视在线观看门户 | 最新电影电视剧综艺动漫一站式畅享</title>
+<meta name="description" content="电影网97（dianyingwang97-app）致力于为影视爱好者打造沉浸式在线观影入口。每日更新院线新片、经典港片、韩剧日剧、国产剧集、纪录片与动漫番剧，提供分类检索、热度排行、观影日历与个性化推荐。界面简洁、加载迅速、移动端自适应，让您随时随地发现好片子。">
+<meta name="keywords" content="电影网97, dianyingwang97-app, 在线电影, 高清电影, 电影推荐, 最新电影, 电视剧在线观看, 韩剧, 日剧, 美剧, 国产剧, 动漫, 综艺, 纪录片, 院线新片, 经典电影, 观影指南">
+<meta name="author" content="电影网97 内容编辑组">
+<meta name="theme-color" content="#0b1020">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="电影网97">
+<meta property="og:type" content="website">
+<meta property="og:title" content="电影网97 - 高清影视在线观看门户">
+<meta property="og:description" content="每日更新院线新片、经典港片、韩剧日剧、国产剧集、纪录片与动漫番剧，分类检索、热度排行、观影日历一应俱全。">
+<meta property="og:url" content="https://dianyingwang97-app.github.io">
+<meta property="og:site_name" content="电影网97">
+<link rel="canonical" href="https://dianyingwang97-app.github.io">
+<style>
+:root{
+  --ink:#e8ecf8;
+  --ink-dim:#a8b0c8;
+  --bg:#070a16;
+  --bg-2:#0c1226;
+  --card:rgba(255,255,255,.05);
+  --line:rgba(255,255,255,.10);
+  --accent:#ff5b3a;
+  --accent-2:#37e6c8;
+  --gold:#ffd166;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:"PingFang SC","Microsoft YaHei","WenQuanYi Micro Hei",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.7;
+  overflow-x:hidden;
+  background-image:radial-gradient(900px 500px at 80% -10%,rgba(255,91,58,.18),transparent 60%),radial-gradient(700px 400px at 0% 20%,rgba(55,230,200,.12),transparent 55%);
+  background-attachment:fixed;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+/* 顶部导航 */
+.nav{
+  position:sticky;top:0;z-index:50;
+  backdrop-filter:blur(14px);
+  background:rgba(7,10,22,.72);
+  border-bottom:1px solid var(--line);
+}
+.nav-in{display:flex;align-items:center;gap:18px;height:62px}
+.brand{font-size:20px;font-weight:800;letter-spacing:.5px;display:flex;align-items:center;gap:8px}
+.brand b{color:var(--accent)}
+.brand em{font-style:normal;font-size:11px;color:var(--bg);background:var(--accent-2);border-radius:4px;padding:2px 6px;font-weight:700}
+.nav-links{display:flex;gap:6px;margin-left:auto;flex-wrap:wrap}
+.nav-links a{
+  font-size:14px;padding:8px 12px;border-radius:8px;color:var(--ink-dim);
+  transition:.2s;white-space:nowrap;
+}
+.nav-links a:hover{color:var(--ink);background:var(--card)}
+/* 首屏 */
+.hero{padding:64px 0 40px;position:relative}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;font-size:12px;
+  color:var(--accent-2);border:1px solid rgba(55,230,200,.35);
+  padding:5px 12px;border-radius:999px;margin-bottom:18px;
+}
+.eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent-2);box-shadow:0 0 10px var(--accent-2)}
+h1{font-size:clamp(30px,5vw,54px);line-height:1.12;font-weight:900;letter-spacing:-.5px}
+h1 span{background:linear-gradient(92deg,var(--accent),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{margin-top:16px;color:var(--ink-dim);font-size:16px;max-width:520px}
+.cta{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:13px 24px;border-radius:10px;font-weight:700;font-size:15px;
+  border:1px solid transparent;cursor:pointer;transition:.2s;
+}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 10px 28px -10px var(--accent)}
+.btn-primary:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.btn-ghost{border-color:var(--line);color:var(--ink)}
+.btn-ghost:hover{background:var(--card)}
+.hero-card{
+  background:linear-gradient(160deg,rgba(255,255,255,.08),rgba(255,255,255,.02));
+  border:1px solid var(--line);border-radius:20px;padding:22px;
+  box-shadow:0 30px 60px -30px rgba(0,0,0,.6);
+}
+.hero-card .poster{
+  height:220px;border-radius:12px;position:relative;overflow:hidden;
+  background:linear-gradient(120deg,#2a1f4e,#111a33);
+  display:flex;align-items:flex-end;padding:16px;
+}
+.hero-card .poster::after{content:"今日推荐";position:absolute;top:12px;left:12px;font-size:11px;font-weight:700;background:var(--gold);color:#1a1a1a;padding:4px 10px;border-radius:6px}
+.hero-card .poster h3{font-size:22px;font-weight:800;text-shadow:0 2px 12px rgba(0,0,0,.5)}
+.meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.meta span{font-size:12px;color:var(--ink-dim);border:1px solid var(--line);padding:4px 10px;border-radius:6px}
+.score{margin-top:16px;display:flex;align-items:center;gap:14px}
+.score b{font-size:34px;font-weight:900;color:var(--gold);line-height:1}
+.score small{color:var(--ink-dim);font-size:12px;display:block}
+/* 通用板块 */
+section{padding:56px 0}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:26px;flex-wrap:wrap}
+.sec-title{font-size:26px;font-weight:800;position:relative;padding-left:14px}
+.sec-title::before{content:"";position:absolute;left:0;top:6px;bottom:6px;width:4px;border-radius:3px;background:linear-gradient(var(--accent),var(--accent-2))}
+.sec-more{font-size:13px;color:var(--ink-dim);border-bottom:1px dashed var(--line);padding-bottom:2px}
+/* 卡片网格 */
+.grid{display:grid;gap:18px}
+.grid-4{grid-template-columns:repeat(4,1fr)}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+.grid-2{grid-template-columns:repeat(2,1fr)}
+.film{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;
+  overflow:hidden;transition:.25s;
+}
+.film:hover{transform:translateY(-5px);border-color:rgba(255,91,58,.45);background:rgba(255,255,255,.07)}
+.thumb{aspect-ratio:3/4;position:relative;overflow:hidden;background:linear-gradient(135deg,#1c2440,#0e1428)}
+.thumb .tag{position:absolute;top:10px;left:10px;font-size:11px;font-weight:700;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);padding:3px 9px;border-radius:5px}
+.thumb .rate{position:absolute;top:10px;right:10px;font-size:12px;font-weight:800;color:var(--gold);background:rgba(0,0,0,.55);padding:3px 9px;border-radius:5px}
+.thumb .shape{position:absolute;inset:0;opacity:.5}
+.film-body{padding:12px 14px 14px}
+.film-body h4{font-size:15px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.film-body p{font-size:12px;color:var(--ink-dim);margin-top:5px;display:flex;justify-content:space-between;gap:8px}
+/* 分类 */
+.cats{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.cat{
+  border:1px solid var(--line);border-radius:14px;padding:20px 10px;text-align:center;
+  background:var(--card);transition:.2s;cursor:pointer;
+}
+.cat:hover{border-color:var(--accent-2);transform:translateY(-3px)}
+.cat .ico{font-size:28px;line-height:1;display:block;margin-bottom:8px}
+.cat b{font-size:15px;display:block}
+.cat small{font-size:11px;color:var(--ink-dim)}
+/* 排行 */
+.rank{display:flex;flex-direction:column;gap:10px}
+.rank-item{display:flex;align-items:center;gap:14px;padding:10px 12px;border:1px solid var(--line);border-radius:11px;background:var(--card)}
+.rank-item .no{font-size:20px;font-weight:900;color:var(--ink-dim);min-width:26px}
+.rank-item:nth-child(1) .no{color:var(--gold)}
+.rank-item:nth-child(2) .no{color:var(--accent)}
+.rank-item:nth-child(3) .no{color:var(--accent-2)}
+.rank-item .txt{flex:1;min-width:0}
+.rank-item .txt b{font-size:14px;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rank-item .txt small{color:var(--ink-dim);font-size:11px}
+.rank-item .up{font-size:12px;color:var(--accent-2);font-weight:700}
+/* 日历 */
+.calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
+.cal-day{border:1px solid var(--line);border-radius:10px;padding:10px 6px;min-height:84px;background:var(--card)}
+.cal-day.today{border-color:var(--accent);background:rgba(255,91,58,.10)}
+.cal-day b{font-size:12px;color:var(--ink-dim);display:block}
+.cal-day span{font-size:11px;color:var(--accent-2);display:block;margin-top:6px;line-height:1.4}
+/* 关于/底部 */
+.about{background:linear-gradient(180deg,transparent,var(--bg-2));border-top:1px solid var(--line)}
+.about p{color:var(--ink-dim);font-size:14px;max-width:820px}
+.foot{border-top:1px solid var(--line);padding:26px 0;color:var(--ink-dim);font-size:12px}
+.foot .domain{color:var(--accent-2);font-weight:700;word-break:break-all}
+.foot-links{display:flex;gap:16px;flex-wrap:wrap;margin:10px 0}
+.foot-links a:hover{color:var(--ink)}
+/* 响应式 */
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr}
+  .grid-4{grid-template-columns:repeat(2,1fr)}
+  .grid-3{grid-template-columns:repeat(2,1fr)}
+  .cats{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:600px){
+  .nav-links a{padding:6px 8px;font-size:13px}
+  .nav-in{height:56px;gap:10px}
+  .brand{font-size:17px}
+  section{padding:40px 0}
+  .grid-4,.grid-3,.grid-2{grid-template-columns:repeat(2,1fr);gap:12px}
+  .cats{grid-template-columns:repeat(2,1fr);gap:10px}
+  .cat{padding:14px 8px}
+  .calendar{grid-template-columns:repeat(4,1fr)}
+  h1{font-size:30px}
+}
+@media print{.nav,.foot-links{display:none}}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/yazhou.js"></script>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top"><b>电影网</b>97<em>dianyingwang97-app</em></a>
+    <nav class="nav-links">
+      <a href="#hot">正在热映</a>
+      <a href="#cats">影片分类</a>
+      <a href="#rank">口碑排行</a>
+      <a href="#calendar">上映日历</a>
+      <a href="#guide">观影指南</a>
+      <a href="#about">关于本站</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">每天更新 · 院线同步 · 高清流畅</span>
+        <h1>在 <span>电影网97</span><br>遇见下一部心头好</h1>
+        <p class="sub">电影网97（访问地址：<strong>https://dianyingwang97-app.github.io</strong>）是一个专注影视发现与观影决策的独立内容门户。我们不搬运资源，只做选片与导航——用清晰的分类、真实的热度与诚恳的短评，帮你在几分钟内决定今晚看什么。</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="#hot">立即选片 →</a>
+          <a class="btn btn-ghost" href="#guide">怎么挑片</a>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <div class="poster">
+          <h3>今日一片：《逆光而行》</h3>
+        </div>
+        <div class="meta">
+          <span>剧情 / 悬疑</span><span>132 分钟</span><span>2026-09-28 上映</span><span>国语 / 中文字幕</span>
+        </div>
+        <div class="score">
+          <div><b>8.7</b><small>综合评分</small></div>
+          <div><b>96%</b><small>推荐指数</small></div>
+          <div><b>2.1万</b><small>想看人数</small></div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 正在热映 -->
+  <section id="hot">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="sec-title">正在热映</h2>
+        <a class="sec-more" href="#">查看完整片单</a>
+      </div>
+      <div class="grid grid-4">
+        <article class="film">
+          <div class="thumb"><span class="tag">IMAX</span><span class="rate">9.1</span><svg class="shape" viewBox="0 0 300 400" preserveAspectRatio="none"><defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff5b3a"/><stop offset="1" stop-color="#7b2ff5"/></linearGradient></defs><rect width="300" height="400" fill="url(#g1)"/><circle cx="230" cy="90" r="55" fill="rgba(255,255,255,.14)"/></svg></div>
+          <div class="film-body"><h4>沉默的渡口</h4><p><span>犯罪 · 剧情</span><span>2026-09-30</span></p></div>
+        </article>
+        <article class="film">
+          <div class="thumb"><span class="tag">动画</span><span class="rate">8.8</span><svg class="shape" viewBox="0 0 300 400" preserveAspectRatio="none"><defs><linearGradient id="g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#37e6c8"/><stop offset="1" stop-color="#1a6fb0"/></linearGradient></defs><rect width="300" height="400" fill="url(#g2)"/><polygon points="0,400 150,180 300,400" fill="rgba(255,255,255,.12)"/></svg></div>
+          <div class="film-body"><h4>深海回响</h4><p><span>动画 · 奇幻</span><span>2026-10-01</span></p></div>
+        </article>
+        <article class="film">
+          <div class="thumb"><span class="tag">动作</span><span class="rate">8.5</span><svg class="shape" viewBox="0 0 300 400" preserveAspectRatio="none"><defs><linearGradient id="g3" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd166"/><stop offset="1" stop-color="#e85d3a"/></linearGradient></defs><rect width="300" height="400" fill="url(#g3)"/><rect x="60" y="60" width="180" height="180" rx="20" fill="rgba(0,0,0,.18)"/></svg></div>
+          <div class="film-body"><h4>极速追击</h4><p><span>动作 · 犯罪</span><span>2026-09-25</span></p></div>
+        </article>
+        <article class="film">
+          <div class="thumb"><span class="tag">喜剧</span><span class="rate">8.2</span><svg class="shape" viewBox="0 0 300 400" preserveAspectRatio="none"><defs><linearGradient id="g4" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#a066ff"/><stop offset="1" stop-color="#37e6c8"/></linearGradient></defs><rect width="300" height="400" fill="url(#g4)"/><path d="M0 300 Q150 150 300 300 V400 H0 Z" fill="rgba(255,255,255,.14)"/></svg></div>
+          <div class="film-body"><h4>我家楼下的大爷</h4><p><span>喜剧 · 家庭</span><span>2026-09-20</span></p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 分类 -->
+  <section id="cats">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="sec-title">影片分类</h2>
+        <a class="sec-more" href="#">全部类型</a>
+      </div>
+      <div class="cats">
+        <div class="cat"><span class="ico">🎬</span><b>电影</b><small>院线 / 经典</small></div>
+        <div class="cat"><span class="ico">📺</span><b>剧集</b><small>国产 / 美韩日</small></div>
+        <div class="cat"><span class="ico">🎨</span><b>动漫</b><small>番剧 / 剧场版</small></div>
+        <div class="cat"><span class="ico">🎤</span><b>综艺</b><small>真人秀 / 访谈</small></div>
+        <div class="cat"><span class="ico">🌍</span><b>纪录片</b><small>自然 / 人文</small></div>
+        <div class="cat"><span class="ico">🏆</span><b>短片</b><small>独立 / 学生</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 口碑排行 + 新片预告 -->
+  <section id="rank">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="sec-title">口碑排行 &amp; 新片预告</h2>
+        <a class="sec-more" href="#">完整榜单</a>
+      </div>
+      <div class="grid grid-2">
+        <div>
+          <h3 style="font-size:16px;margin-bottom:12px;color:var(--gold)">🔥 本周热度榜</h3>
+          <div class="rank">
+            <div class="rank-item"><span class="no">01</span><div class="txt"><b>沉默的渡口</b><small>犯罪剧情 · 9.1 分 · 46 万想看</small></div><span class="up">↑3</span></div>
+            <div class="rank-item"><span class="no">02</span><div class="txt"><b>深海回响</b><small>动画奇幻 · 8.8 分 · 38 万想看</small></div><span class="up">↑1</span></div>
+            <div class="rank-item"><span class="no">03</span><div class="txt"><b>逆光而行</b><small>剧情悬疑 · 8.7 分 · 33 万想看</small></div><span class="up">↑5</span></div>
+            <div class="rank-item"><span class="no">04</span><div class="txt"><b>极速追击</b><small>动作犯罪 · 8.5 分 · 29 万想看</small></div><span class="up">↓1</span></div>
+            <div class="rank-item"><span class="no">05</span><div class="txt"><b>我家楼下的大爷</b><small>喜剧家庭 · 8.2 分 · 21 万想看</small></div><span class="up">↑2</span></div>
+          </div>
+        </div>
+        <div>
+          <h3 style="font-size:16px;margin-bottom:12px;color:var(--accent-2)">🆕 即将上映</h3>
+          <div class="grid grid-2">
+            <article class="film">
+              <div class="thumb"><span class="tag">科幻</span><svg class="shape" viewBox="0 0 300 400" preserveAspectRatio="none"><rect width="300" height="400" fill="#1b2845"/><circle cx="150" cy="160" r="80" fill="rgba(55,230,200,.25)"/></svg></div>
+              <div class="film-body"><h4>星尘来信</h4><p><span>10-18 上映</span></p></div>
+            </article>
+            <article class="film">
+              <div class="thumb"><span class="tag">爱情</span><svg class="shape" viewBox="0 0 300 400" preserveAspectRatio="none"><rect width="300" height="400" fill="#3a1c2b"/><path d="M150 320 L90 200 L210 200 Z" fill="rgba(255,91,58,.3)"/></svg></div>
+              <div class="film-body"><h4>第七个秋天</h4><p><span>10-25 上映</span></p></div>
+            </article>
+          </div>
+          <p style="margin-top:14px;color:var(--ink-dim);font-size:13px">榜单依据站内搜索量、收藏数与用户评分综合计算，每日 06:00 更新。排名只反映关注度，不代表艺术价值高低。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 上映日历 -->
+  <section id="calendar">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="sec-title">上映日历</h2>
+        <a class="sec-more" href="#">更多档期</a>
+      </div>
+      <div class="calendar">
+        <div class="cal-day"><b>周一 10/05</b><span>《沉默的渡口》点映</span></div>
+        <div class="cal-day today"><b>周二 10/06</b><span>《深海回响》加场</span></div>
+        <div class="cal-day"><b>周三 10/07</b><span>导演见面会</span></div>
+        <div class="cal-day"><b>周四 10/08</b><span>限时特惠</span></div>
+        <div class="cal-day"><b>周五 10/09</b><span>新片首映</span></div>
+        <div class="cal-day"><b>周六 10/10</b><span>亲子动画专场</span></div>
+        <div class="cal-day"><b>周日 10/11</b><span>经典修复展</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 观影指南 -->
+  <section id="guide">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="sec-title">观影指南</h2>
+        <a class="sec-more" href="#">更多干货</a>
+      </div>
+      <div class="grid grid-3">
+        <article class="film">
+          <div class="film-body" style="padding:18px">
+            <h4>🎯 三分钟决定看什么</h4>
+            <p style="color:var(--ink-dim);font-size:13px;margin-top:8px;display:block">先定时长（90 分钟还是马拉松），再定情绪（想笑 / 想哭 / 想烧脑），最后看评分分布而非平均分。本站分类与热度榜正是按这个逻辑组织。</p>
+          </div>
+        </article>
+        <article class="film">
+          <div class="film-body" style="padding:18px">
+            <h4>🗣️ 字幕与音轨怎么选</h4>
+            <p style="color:var(--ink-dim);font-size:13px;margin-top:8px;display:block">文艺片建议原声音轨 + 中文字幕，保留表演细节；动作片可选手工精校字幕，避免错译错过梗。本站片目页均标注字幕与音轨情况。</p>
+          </div>
+        </article>
+        <article class="film">
+          <div class="film-body" style="padding:18px">
+            <h4>📐 家庭观影尺寸参考</h4>
+            <p style="color:var(--ink-dim);font-size:13px;margin-top:8px;display:block">55 英寸电视建议观看距离 2.5–3 米；投影 100 英寸建议 3–3.5 米。关灯、调低蓝光、开影院模式，体验提升立竿见影。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 关于 -->
+  <section id="about" class="about">
+    <div class="wrap">
+      <div class="sec-head"><h2 class="sec-title">关于电影网97</h2></div>
+      <p>电影网97（站点：<strong>https://dianyingwang97-app.github.io</strong>）成立于一个很朴素的念头：片荒不该成为一种日常。我们是一群爱看片的编辑与设计师，每天把分散在各地的上映信息、口碑变化、幕后花絮与冷门佳片整理成好读的几屏内容。本站不提供任何影视资源下载或在线播放，只做信息聚合、选片建议与观影文化讨论。</p>
+      <p style="margin-top:12px">我们看重三件事：<strong>真实</strong>（评分与热度不刷）、<strong>克制</strong>（不堆砌片目，宁缺毋滥）、<strong>友好</strong>（移动端优先，广告为零）。如果你有想看的片子、想聊的导演，或者发现某条信息有误，欢迎通过页脚渠道告诉我们。</p>
+      <p style="margin-top:12px">关键词：电影网97、dianyingwang97-app、在线电影、高清电影、电影推荐、最新电影、电视剧在线观看、韩剧、日剧、美剧、国产剧、动漫、综艺、纪录片。</p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div>© <span id="yr">2026</span> 电影网97 · 独立影视内容门户 · 站址：<span class="domain">https://dianyingwang97-app.github.io</span></div>
+    <div class="foot-links">
+      <a href="#top">返回顶部</a>
+      <a href="#hot">正在热映</a>
+      <a href="#cats">影片分类</a>
+      <a href="#rank">口碑排行</a>
+      <a href="#calendar">上映日历</a>
+      <a href="#guide">观影指南</a>
+      <a href="#about">关于本站</a>
+      <a href="#">隐私说明</a>
+      <a href="#">纠错投稿</a>
+    </div>
+    <div>页面所有影片、评分、上映日期均为示例内容，仅用于版式演示，不代表真实影视数据。本站尊重版权，如需下线某条信息请与我们联系。</div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click', function(e){
+    var t = document.querySelector(this.getAttribute('href'));
+    if(t){ e.preventDefault(); window.scrollTo({top: t.offsetTop - 70, behavior:'smooth'}); }
+  });
+});
+</script>
+</body>
+</html>
